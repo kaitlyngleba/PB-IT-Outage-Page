@@ -1,0 +1,110 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7fa;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  border: 5px solid black;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.last-updated {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #263238;
+  color: white;
+  border: 5px solid black;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+tr td {
+  padding: 18px 16px;
+  border: 5px solid black;
+  border-bottom: 5px solid black;
+}
+tr {
+border: 5px solid black;
+border-bottom: 5px solid black;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover { background: #f8fbff; }
+
+.status {
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+
+.status.error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.status.available {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.info {
+  color: #555;
+  line-height: 1.5;
+}
+
+.timestamp {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+footer {
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.7rem; }
+  td, th { padding: 12px 8px; }
+}

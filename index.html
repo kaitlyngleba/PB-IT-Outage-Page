@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Service Status</title>
+  
+  <!-- Font Awesome for the icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Your custom CSS file -->
+  <link rel="stylesheet" href="styles.css">   <!-- change "style.css" to whatever you named your CSS file -->
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>IT Service Status</h1>
+    <div class="last-updated">Last updated: December 4, 2025 – 9:39 AM</div>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Status</th>
+        <th>Information</th>
+        <th>Last Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="product-name">Adobe</td>
+        <td><span class="status error"><i class="fas fa-exclamation-triangle"></i> Error</span></td>
+        <td class="info">You may receive an error “You’ve reached your device activation limit”, “Adobe is asking you to sign in”, or similar.</td>
+        <td class="timestamp">12/4/25 9:35am</td>
+      </tr>
+      <tr>
+        <td class="product-name">CCH Axcess Products</td>
+        <td><span class="status available"><i class="fas fa-check-circle"></i> Available</span></td>
+        <td class="info">No issues reported.</td>
+        <td class="timestamp">12/4/25 9:35am</td>
+      </tr>
+      <tr>
+        <td class="product-name">Document</td>
+        <td><span class="status error"><i class="fas fa-exclamation-triangle"></i> Error</span></td>
+        <td class="info">No issues reported</td>
+        <td class="timestamp">12/4/25 9:35am</td>
+      </tr>
+      <tr>
+        <td class="product-name">Dashboard</td>
+        <td><span class="status error"><i class="fas fa-exclamation-triangle"></i> Error</span></td>
+        <td class="info">No issues reported</td>
+        <td class="timestamp">12/4/25 9:35am</td>
+      </tr>
+      <tr>
+        <td class="product-name">Engagement</td>
+        <td><span class="status available"><i class="fas fa-check-circle"></i> Available</span></td>
+        <td class="info">No issues reported</td>
+        <td class="timestamp">12/4/25 9:35am</td>
+      </tr>
+      <tr>
+        <td class="product-name">Outlook</td>
+        <td><span class="status available"><i class="fas fa-check-circle"></i> Available</span></td>
+        <td class="info">No issues reported</td>
+        <td class="timestamp">12/4/25 9:35am</td>
+      </tr>
+      <tr>
+        <td class="product-name">Workstream</td>
+        <td><span class="status available"><i class="fas fa-check-circle"></i> Available</span></td>
+        <td class="info">No issues reported</td>
+        <td class="timestamp">12/4/25 9:35am</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    If you have any other questions or concerns, please feel free to submit an IT ticket.
+  </footer>
+</div>
+
+</body><script>
+window.addEventListener("DOMContentLoaded", function () {
+    const table = document.querySelector("table");
+    const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+    // Separate error and non-error rows
+    const errorRows = rows.filter(row => row.querySelector(".status")?.textContent.includes("Error"));
+    const okRows = rows.filter(row => !row.querySelector(".status")?.textContent.includes("Error"));
+
+    // Re-append rows (put errors first)
+    const tbody = table.querySelector("tbody");
+    tbody.innerHTML = "";
+    errorRows.forEach(r => tbody.appendChild(r));
+    okRows.forEach(r => tbody.appendChild(r));
+});
+</script>
+
+</html>
